@@ -20,14 +20,14 @@ void *worker2(void *arg) {
 
 void *worker3(void *arg) {
   // sem_wait(&s2);
-  sem_wait(&s1);
+  // sem_wait(&s1);
   sem_wait(&s4);
   printf("I am worker 3\n");
   pthread_exit(NULL);
 }
 
 void *worker4(void *arg) {
-  sem_wait(&s2);
+  sem_wait(&s1);
   printf("I am worker 4\n");
   sem_post(&s4);
   pthread_exit(NULL);
